@@ -2,5 +2,6 @@
 
 - .bashrc
 - .bash_profile
-- .git-prompt.sh
-- .git-completion.bash
+- installed automatically by setup.sh
+ - .git-prompt.sh
+ - .git-completion.bash

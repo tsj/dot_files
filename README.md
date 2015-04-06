@@ -2,6 +2,7 @@
 
 - .bashrc
 - .bash_profile
-- installed automatically by setup.sh
+- .vimrc (with vundle)
+- installed automatically
  - .git-prompt.sh
  - .git-completion.bash

@@ -14,7 +14,7 @@ rm -rf ~/.vim/bundle/
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cp -v .vimrc ~/.vimrc
 echo "Install vundle plugin"
-vim +PluginInstall +qall
+echo "$ vim +PluginInstall +qall"
 echo "Install go binaries"
-vim +GoInstallBinaries +qall
+echo "$ vim +GoInstallBinaries +qall"
 echo "Done"

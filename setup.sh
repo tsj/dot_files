@@ -1,3 +1,8 @@
+# download dot files
+curl https://raw.githubusercontent.com/tsj/dot_files/master/.bashrc -o ~/.bashrc
+curl https://raw.githubusercontent.com/tsj/dot_files/master/.bash_profile -o ~/.bash_profile
+curl https://raw.githubusercontent.com/tsj/dot_files/master/.vimrc -o ~/.vimrc
+
 # setup bash
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash

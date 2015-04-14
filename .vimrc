@@ -126,7 +126,7 @@ if has("gui_running")
 		behave mswin
 	elseif has("gui_macvim")
 		set guioptions+=b
-		set guifont=Menlo:h20
+		set guifont=Menlo:h14
 		set clipboard=unnamed "share clipboard 
 	endif
 endif
@@ -178,6 +178,7 @@ au FileType python set tabstop=4 expandtab shiftwidth=4 softtabstop=4
 au FileType php set tabstop=4 expandtab shiftwidth=4 softtabstop=4
 au FileType javascript set tabstop=4 expandtab shiftwidth=4 softtabstop=4
 au FileType html set tabstop=4 expandtab shiftwidth=4 softtabstop=4
+au FileType go map <F11> :!go run % <CR>
 
 let g:go_fmt_command = "goimports"
 

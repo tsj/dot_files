@@ -2,6 +2,7 @@
 " tsj.july@gmail.com
 "
 
+" vundle setting
 set nocompatible
 filetype off
 
@@ -9,9 +10,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'fatih/vim-go'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
+Plugin 'fatih/vim-go'
 
 Plugin 'tomasr/molokai'
 
@@ -55,7 +56,7 @@ set statusline+=]
 
 set statusline+=\ "separator
 
-" style : [ruby]
+" style : [go]
 set statusline+=%y "syntax
 
 set statusline+=\ "separator
@@ -86,17 +87,12 @@ set incsearch		" do incremental searching
 set hlsearch		" highlight search
 set ignorecase		" ignore case
 set smartcase		" if a pattern contains an uppercase letter,
-			" it is casesensivit
+			" it is case sensitive
 
 " indent
 set autoindent		" always set autoindenting on
 set cindent
 set smartindent
-
-" tab
-" can use tab and shift + tab in visual mode
-vmap <Tab> >gv
-vmap <S-Tab> <gv
 
 " backup
 set nobackup
@@ -116,79 +112,62 @@ set ffs=unix,dos,mac
 "set ff=unix
 
 " GUI
-if has("gui_running")
-	if has("gui_win32")
-		set guioptions+=b
-		set guifont=DejaVu_Sans_Mono:h14
-		set clipboard=unnamed "share clipboard 
-		source $VIMRUNTIME/vimrc_example.vim
-		source $VIMRUNTIME/mswin.vim
-		behave mswin
-	elseif has("gui_macvim")
-		set guioptions+=b
-		set guifont=Menlo:h14
-		set clipboard=unnamed "share clipboard 
-	endif
+if has("gui_win32")
+	set guioptions+=b
+	set guifont=DejaVu_Sans_Mono:h14
+	set clipboard=unnamed "share clipboard 
+	source $VIMRUNTIME/vimrc_example.vim
+	source $VIMRUNTIME/mswin.vim
+	behave mswin
+elseif has("gui_macvim")
+	set guioptions+=b
+	set guifont=Menlo:h14
+	set clipboard=unnamed "share clipboard 
 endif
 
-" Map
+" key mapping
+
+" tab
+" can use tab and shift + tab in visual mode
+vmap <Tab> >gv
+vmap <S-Tab> <gv
+
 " reference: http://blog.dokenzy.com/archives/1700
-" for splitting
-noremap <TAB><TAB> <C-w><C-w>
+" for splitting tab
+noremap tt <C-w><C-w>
 
 " map function keys
-map <F3> v]}zf
-map <F4> zo
+map <F2> :tabe <BAR> :NERDTreeToggle <CR>
+map <F3> :Gstatus <CR>
+map <F4> :Gdiff <CR>
 
-"F5 : NERDTree
-map <F5> :tabe <BAR> :NERDTreeToggle <CR>
-let NERDTreeQuitOnOpen=1
-
-"F6 : close tab
-map <F6> :tabclose <CR>
-
-"F7 : horizontal splitting
-map <F7> :sp <CR>
-
-"F8 : vertical splitting
-map <F8> :vs <CR>
-
-"F9 : compile
-au FileType c map <F9> :!gcc -W -Wall % -o %< -g <CR>
-au FileType cpp map <F9> :!g++ -W -Wall % -o %< -g <CR>
+au FileType go map <F7> :vs <BAR> :GoDef <CR>
+au FileType go map <F8> :GoDocBrowser <CR>
 
 " F11 execute
-if has("gui_running")
-	if has("gui_win32")
-		au FileType dosbatch map <F11> :!% <CR>
-		au FileType c,cpp map <F11> :!%< <CR>
-		au FileType html map <F11> :!explorer % <CR>
-	elseif has("gui_macvim")
-		au FileType html map <F11> :!open -a /Applications/Safari.app % <CR>
-	endif
+if has("gui_win32")
+	au FileType dosbatch map <F11> :!% <CR>
+	au FileType html map <F11> :!explorer % <CR>
+elseif has("gui_macvim")
+	au FileType sh map <F11> :!./% <CR>
+	au FileType html map <F11> :!open -a /Applications/Safari.app % <CR>
 elseif has("unix")
 	au FileType sh map <F11> :!./% <CR>
-	au FileType c,cpp map <F11> :!./%< <CR>
 endif
 
 au FileType ruby map <F11> :!ruby % <CR>
-au FileType ruby set tabstop=2 expandtab shiftwidth=2 softtabstop=2
 au FileType python map <F11> :!python % <CR>
-au FileType python set tabstop=4 expandtab shiftwidth=4 softtabstop=4
-au FileType php set tabstop=4 expandtab shiftwidth=4 softtabstop=4
-au FileType javascript set tabstop=4 expandtab shiftwidth=4 softtabstop=4
-au FileType html set tabstop=4 expandtab shiftwidth=4 softtabstop=4
 au FileType go map <F11> :!go run % <CR>
 
+" tab size
+au FileType ruby set tabstop=2 expandtab shiftwidth=2 softtabstop=2
+au FileType python set tabstop=4 expandtab shiftwidth=4 softtabstop=4
+au FileType html set tabstop=4 expandtab shiftwidth=4 softtabstop=4
+au FileType javascript set tabstop=4 expandtab shiftwidth=4 softtabstop=4
+au FileType php set tabstop=4 expandtab shiftwidth=4 softtabstop=4
+
 let g:go_fmt_command = "goimports"
-
-" F12 debug
-au FileType c,cpp map <F12> :!gdb -q %< <CR>
-
-" hangul
-ca ㅈ w
-ca ㅈㅂ wq
-ca ㅂ q
+let NERDTreeQuitOnOpen=1
 
 " starts up with NERDTree
 autocmd StdinReadPre * let s:std_in=1

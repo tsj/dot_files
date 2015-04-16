@@ -123,6 +123,8 @@ elseif has("gui_macvim")
 	set guioptions+=b
 	set guifont=Menlo:h14
 	set clipboard=unnamed "share clipboard 
+	set columns=120
+	set lines=40
 endif
 
 " key mapping
@@ -134,7 +136,7 @@ vmap <S-Tab> <gv
 
 " reference: http://blog.dokenzy.com/archives/1700
 " for splitting tab
-noremap tt <C-w><C-w>
+noremap ff <C-w><C-w>
 
 " map function keys
 map <F2> :tabe <BAR> :NERDTreeToggle <CR>

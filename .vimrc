@@ -141,7 +141,7 @@ noremap ff <C-w><C-w>
 " map function keys
 map <F2> :tabe <BAR> :NERDTreeToggle <CR>
 map <F3> :Gstatus <CR>
-map <F4> :Gdiff <CR>
+map <F4> :Gvdiff <CR>
 
 au FileType go map <F7> :vs <BAR> :GoDef <CR>
 au FileType go map <F8> :GoDocBrowser <CR>
@@ -169,7 +169,7 @@ au FileType javascript set tabstop=4 expandtab shiftwidth=4 softtabstop=4
 au FileType php set tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
 let g:go_fmt_command = "goimports"
-let NERDTreeQuitOnOpen=1
+let g:NERDTreeQuitOnOpen=1
 
 " starts up with NERDTree
 autocmd StdinReadPre * let s:std_in=1

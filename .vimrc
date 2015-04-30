@@ -11,6 +11,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'fatih/vim-go'
 
@@ -135,6 +136,9 @@ endif
 " can use tab and shift + tab in visual mode
 vmap <Tab> >gv
 vmap <S-Tab> <gv
+
+" nerdcommenter
+vmap t <plug>NERDCommenterToggle
 
 " reference: http://blog.dokenzy.com/archives/1700
 " for splitting tab

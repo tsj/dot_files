@@ -101,6 +101,8 @@ set nobackup
 " set dir=~/backup/swap
 set history=1024
 
+set autochdir
+
 syntax enable
 
 " encoding

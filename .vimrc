@@ -144,6 +144,11 @@ vmap t <plug>NERDCommenterToggle
 " for splitting tab
 noremap ff <C-w><C-w>
 
+noremap fj <C-f>
+noremap fk <C-b>
+noremap fh ^
+noremap fl $
+
 " map function keys
 map <F2> :tabe <BAR> :NERDTreeToggle <CR>
 map <F3> :Gstatus <CR>

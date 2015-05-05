@@ -14,6 +14,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'fatih/vim-go'
+Plugin 'rking/ag.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'sjl/gundo.vim'
 
 Plugin 'tomasr/molokai'
 
@@ -31,7 +34,6 @@ set visualbell
 set backspace=indent,eol,start
 
 set number		" line number
-"set numberwidth=6	" line number width, not works
 set nowrap
 set ruler		" show the cursor position all the time
 
@@ -153,6 +155,8 @@ noremap fl $
 map <F2> :tabe <BAR> :NERDTreeToggle <CR>
 map <F3> :Gstatus <CR>
 map <F4> :Gvdiff <CR>
+map <F5> :GitGutterToggle <CR>
+map <F6> :GundoToggle <CR>
 
 au FileType go map <F7> :vs <BAR> :GoDef <CR>
 au FileType go map <F8> :GoDocBrowser <CR>
@@ -179,8 +183,12 @@ au FileType html set tabstop=4 expandtab shiftwidth=4 softtabstop=4
 au FileType javascript set tabstop=4 expandtab shiftwidth=4 softtabstop=4
 au FileType php set tabstop=4 expandtab shiftwidth=4 softtabstop=4
 
+" global variables
 let g:go_fmt_command = "goimports"
-let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeQuitOnOpen = 1
+let g:gitgutter_enabled = 1
+let g:gitgutter_realtime = 0
+let g:gitgutter_highlight_lines = 1
 
 " starts up with NERDTree
 autocmd StdinReadPre * let s:std_in=1

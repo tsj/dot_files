@@ -4,6 +4,7 @@ echo "\033[34mDownloading dot files\033[0m"
 curl https://raw.githubusercontent.com/tsj/dot_files/master/.bashrc -o ~/.bashrc
 curl https://raw.githubusercontent.com/tsj/dot_files/master/.bash_profile -o ~/.bash_profile
 curl https://raw.githubusercontent.com/tsj/dot_files/master/.vimrc -o ~/.vimrc
+curl https://raw.githubusercontent.com/tsj/dot_files/master/.gitconfig -o ~/.gitconfig
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 

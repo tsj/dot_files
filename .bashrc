@@ -11,7 +11,7 @@ alias_history_buffer() {
   if [ -n "$1" ]
   then
     sed -n "$1p" ~/.history_buffer > ~/.mini_buffer
-    history | grep -f ~/.mini_buffer
+    history | grep -f ~/.mini_buffer | tail -n 1
   fi
 }
 

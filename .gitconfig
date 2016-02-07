@@ -3,5 +3,3 @@
 	email = tsj.july@gmail.com
 [core]
 	editor = /usr/bin/vim
-[url "git@github.com:"]
-	insteadOf = https://github.com/

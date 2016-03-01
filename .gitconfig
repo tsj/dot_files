@@ -3,7 +3,5 @@
 	email = tsj.july@gmail.com
 [core]
 	editor = /usr/bin/vim
-[url "git@github.com:"]
-	insteadOf = https://github.com/
 [pager]
 	diff = diff-so-fancy | less --tabs=4 -RFX

@@ -151,6 +151,8 @@ noremap fk <C-b>
 noremap fh ^
 noremap fl $
 
+nmap <silent><Esc><Esc> :nohlsearch<CR>
+
 " map function keys
 map <F2> :tabe <BAR> :NERDTreeToggle <CR>
 map <F3> :Gstatus <CR>

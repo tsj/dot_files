@@ -38,7 +38,7 @@ set nowrap
 set ruler		" show the cursor position all the time
 
 " colorcolumn
-set colorcolumn=80
+set colorcolumn=80,120
 
 " status bar
 set ls=2		" last status 2 row

@@ -182,7 +182,7 @@ au FileType go map <F11> :!go run % <CR>
 au FileType ruby set tabstop=2 expandtab shiftwidth=2 softtabstop=2
 au FileType python set tabstop=4 expandtab shiftwidth=4 softtabstop=4
 au FileType html set tabstop=4 expandtab shiftwidth=4 softtabstop=4
-au FileType javascript set tabstop=4 expandtab shiftwidth=4 softtabstop=4
+au FileType javascript set tabstop=2 expandtab shiftwidth=2 softtabstop=2
 au FileType php set tabstop=4 expandtab shiftwidth=4 softtabstop=4
 au FileType go set tabstop=8 shiftwidth=8 softtabstop=8
 
